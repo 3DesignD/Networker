@@ -1,5 +1,5 @@
 [package]
-name = "3DesignD/Networker"
+name = "3designd/networker"
 version = "0.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
