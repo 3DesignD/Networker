@@ -32,7 +32,7 @@ end
 ]=]
 
 -- DONT EVER, EVER, EVER MAKE THE SAME NAME WITH STREAMS
-function Networker.GetStream(name: string, networkType: string)
+function Networker.GetStream<T>(name: string, networkType: string): T
     local network  = ReplicatedStorage:FindFirstChild("Network")
     local onClient = RunService:IsClient()
 
@@ -54,7 +54,7 @@ function Networker.GetStream(name: string, networkType: string)
     stream.Name   = name
     stream.Parent = network
 
-    return stream
+    return stream :: T
 end
 
 return Networker
