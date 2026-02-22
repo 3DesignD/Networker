@@ -38,19 +38,19 @@ function Networker._getStream(name: string, networkType: string)
 end
 
 ------ PUBLIC WRAPPERS ------
-function Networker.GetRemoteEvent(name: string)
+function Networker.GetRemoteEvent(name: string): RemoteEvent
     return Networker._getStream(name, "RemoteEvent") :: RemoteEvent
 end
 
-function Networker.GetUnreliableRemoteEvent(name: string)
+function Networker.GetUnreliableRemoteEvent(name: string): UnreliableRemoteEvent
     return Networker._getStream(name, "UnreliableRemoteEvent") :: UnreliableRemoteEvent
 end
 
-function Networker.GetRemoteFunction(name: string)
+function Networker.GetRemoteFunction(name: string): RemoteFunction
     return Networker._getStream(name, "RemoteFunction") :: RemoteFunction
 end
 
-function Networker.GetBindableEvent(name: string)
+function Networker.GetBindableEvent(name: string): BindableEvent
     return Networker._getStream(name, "BindableEvent") :: BindableEvent
 end
 
