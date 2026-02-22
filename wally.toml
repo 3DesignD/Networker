@@ -1,8 +1,9 @@
 [package]
 name = "3designd/networker"
-version = "0.3.1"
+version = "0.3.4"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+exclude = ["wally.toml", "rokit.toml"]
 
 [dependencies]
 
