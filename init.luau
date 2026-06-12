@@ -15,7 +15,7 @@ local Networker = {}
     @desc Creates a 
 ]=]
 
-function Networker._getStream(name: string, networkType: string)
+function Networker.GetStream(name: string, networkType: string)
     ------ NETWORK VARS ------
     local onClient = RunService:IsClient()
     local network  = onClient and ReplicatedStorage:WaitForChild("Network") or ReplicatedStorage:FindFirstChild("Network")
@@ -33,25 +33,9 @@ function Networker._getStream(name: string, networkType: string)
     local stream = network:FindFirstChild(name) or Instance.new(networkType)
     stream.Name = name
     stream.Parent = network
+    
 
     return stream
-end
-
------- PUBLIC WRAPPERS ------
-function Networker.GetRemoteEvent(name: string): RemoteEvent
-    return Networker._getStream(name, "RemoteEvent") :: RemoteEvent
-end
-
-function Networker.GetUnreliableRemoteEvent(name: string): UnreliableRemoteEvent
-    return Networker._getStream(name, "UnreliableRemoteEvent") :: UnreliableRemoteEvent
-end
-
-function Networker.GetRemoteFunction(name: string): RemoteFunction
-    return Networker._getStream(name, "RemoteFunction") :: RemoteFunction
-end
-
-function Networker.GetBindableEvent(name: string): BindableEvent
-    return Networker._getStream(name, "BindableEvent") :: BindableEvent
 end
 
 -- add more as needed
